@@ -424,3 +424,132 @@ console.log(a5(10, 20));
  /// implicit return , {} and "return" keyword is not required
 let a6 = (n1, n2) => n1 + n2;
   console.log(a6(5, 10)); */
+
+//! 9) IMMEDIATLY INVOCKED FUNCTION EXPRESSION (IIFE)
+
+/* (function (){
+  console.log("I am IIFE");
+  return "Hii";
+})();
+console.log(x); //Hii
+
+function demo(){
+  return "Hii"
+}
+let val = demo(); */
+
+
+//! 10) CONSTRUCTOR FUNCTION: Used to create objects
+
+
+
+
+//! OBJECTS : It is used to store multiple data in the form of key and value pairs
+// 3 WAYS TO CREATE OBJECT
+
+
+//! 1) object literals
+// const obj1 = {
+//   id: 1,
+//   fname: "John",
+// };
+// console.log(obj1);
+
+// //! 2) objects Constructor
+// const obj2 = new Object({id: 2, fname: "Jane"});
+// console.log(obj2);
+
+// //! 3) Constructor Function
+// function student(id, firstName){
+//   this.id = id;
+//   this.firstName = firstName;
+// }
+// let s1 = new student(1, "James");
+// console.log(s1);
+// let s2 = new student(2, "Clark");
+// console.log(s2);
+
+//! CRUD WITH OBJECTS
+
+//! 1) CREATE
+// const obj = {
+//   id: 1,
+//   fname: "John",
+//   lname: "Doe",
+//   age: 25,
+//   company: "NA",
+// };
+// console.log(obj);
+
+// //! 2) READ
+// // There are 2 ways to read
+// // 1) using dot operator
+
+// console.log(obj.fname); //John
+// console.log(obj.degree); //undefined
+
+
+
+// // 2) using square brackets
+
+// let x = "lname"
+// console.log(obj["id"]); //1
+// console.log(obj[x]); //Doe
+
+// // for in loop
+
+// for (let i in obj){
+//   console.log(obj[i]);
+// }
+
+// //! UPDATE
+// obj.company = "TCS"
+// console.log(obj);
+
+// //! ADD NEW KEY
+// obj.salary = 60000
+// console.log(obj);
+
+// //! DELETE
+// delete obj.salary
+// console.log(obj);
+
+// //! OBJECT METHODS
+// let obj = {
+//   id: 1,
+//   ename: "John Doe",
+// };
+
+// //! 1) Object.keys()
+// let keys = Object.keys(obj);
+// console.log(keys); // ["id" , "ename"]
+
+// //! 2) Object.values()
+// let values = Object.values(obj);
+// console.log(values); // [1 , "John Doe"]
+
+// //! 3) Object.entries()
+// let keyAndValue = Object.entries(obj);
+// console.log(keyAndValue); // [ ["id" , 1]  , ["ename" , "John Doe"]]
+
+// //! 4) Object.fromEntries()
+// let newObj = Object.fromEntries(keyAndValue);
+// console.log(newObj); // {id: 1, ename: 'John Doe'}
+
+// let obj2 = {
+//   id: 2,
+//   name: {
+//     firstName: "Jane",
+//     lastName: "Doe",
+//   },
+//   hobbies: ["coding", "singing", "dancing"],
+//   address: {
+//     city: "Noida",
+//     state: "UP",
+//     pin: 876541,
+//   },
+// };
+
+// console.log(obj2.name.firstName); //  Jane
+// console.log(obj2.hobbies[0]); // coding
+// console.log(obj2.address.state); // UP
