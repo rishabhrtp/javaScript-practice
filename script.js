@@ -481,22 +481,22 @@ let val = demo(); */
 // };
 // console.log(obj);
 
-// //! 2) READ
-// // There are 2 ways to read
-// // 1) using dot operator
+//! 2) READ
+// There are 2 ways to read
+// 1) using dot operator
 
 // console.log(obj.fname); //John
 // console.log(obj.degree); //undefined
 
 
 
-// // 2) using square brackets
+// 2) using square brackets
 
 // let x = "lname"
 // console.log(obj["id"]); //1
 // console.log(obj[x]); //Doe
 
-// // for in loop
+// for in loop
 
 // for (let i in obj){
 //   console.log(obj[i]);
@@ -553,3 +553,94 @@ let val = demo(); */
 // console.log(obj2.name.firstName); //  Jane
 // console.log(obj2.hobbies[0]); // coding
 // console.log(obj2.address.state); // UP
+
+//! OBJECT DESTRUCTURING
+
+/* let obj1 = {
+  id: 1,
+  fname: "John",
+  lname: "Doe",
+};
+
+let { fname, lname, salary=0 } = obj1;
+console.log(fname, lname);
+console.log(salary);
+console.log(id);
+console.log() */
+
+/* let obj2 = {
+  id: 2,
+  Name: {
+    firstName: "Jane",
+    lastName: "Doe",
+  },
+  hobbies: ["coding", "singing", "dancing"],
+  address: {
+    city: "Noida",
+    state: "UP",
+    pin: 876541,
+  },
+  details:{
+    id: "janeQSP1",
+    course: "Mern Stack",
+  },
+  }; */
+
+// id, firstName, coding, city
+
+/* let {
+  id,
+  Name: { firstName },
+  hobbies: [ , , h3],
+  address: { city },
+  details: { id: detailID, course },
+} = obj2;
+
+console.log(id, firstName, h3, city, detailID, course);
+let arr  = [10,20,30,40,50]
+let[, n1, , n2] = arr;
+console.log(n1, n2); */
+
+const user = {
+  id: 1,
+  name: "Leanne Graham",
+  username: "Bret",
+  email: "Sincere@april.biz",
+  address: {
+    street: "Kulas Light",
+    suite: "Apt. 556",
+    city: "Gwenborough",
+    zipcode: "92998-3874",
+    geo: {
+      lat: "-37.3159",
+      lng: "81.1496"
+    }
+  },
+  phone: "1-770-736-8031 x56442",
+  website: "hildegard.org",
+  company: {
+    name: "Romaguera-Crona",
+    catchPhrase: "Multi-layered client-server neural-net",
+    bs: "harness real-time e-markets"
+  }
+}
+
+// name, username, street, zipcode, lat, lng, companyName
+
+
+let {
+    name,
+    username,
+    address: {
+      street,
+      zipcode,
+      geo: { name: companyName},
+    }
+
+
+} = user
+
+console.log(name);
+console.log(username);
+console.log(street);
+console.log
