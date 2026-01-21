@@ -634,13 +634,16 @@ let {
     address: {
       street,
       zipcode,
-      geo: { name: companyName},
-    }
+      geo: { lat, lng},
+    },
 
-
+    company: {name: companyName},
 } = user
 
 console.log(name);
 console.log(username);
 console.log(street);
-console.log
+console.log(zipcode);
+console.log(lat);
+console.log(lng);
+console.log(companyName);
