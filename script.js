@@ -601,7 +601,7 @@ let arr  = [10,20,30,40,50]
 let[, n1, , n2] = arr;
 console.log(n1, n2); */
 
-const user = {
+/* const user = {
   id: 1,
   name: "Leanne Graham",
   username: "Bret",
@@ -625,7 +625,7 @@ const user = {
   }
 }
 
-// name, username, street, zipcode, lat, lng, companyName
+/// name, username, street, zipcode, lat, lng, companyName
 
 
 let {
@@ -647,3 +647,80 @@ console.log(zipcode);
 console.log(lat);
 console.log(lng);
 console.log(companyName);
+ */
+
+
+/* //! "this" keyword
+
+console.log(window);// GLOBAL OBJECT
+console.log(this); // POINTS TO WINDOW OBJECT
+
+///! how to create your own method
+///! note : DON'T USE ARROW FUNC TO CREATE METHOD BECAUSE "this" KEYWORD REFERS TO WINDOW OBJECT.
+
+let student = {
+  id: 1,
+  fname: "John",
+  lname: "Doe",
+  getFullName: function (){
+    console.log(`${this.fname} ${this.lname}`);
+  },
+  getEmail(){
+    console.log(`${this.fname}.${this.lname}@gmail.com`);
+  },
+};
+
+console.log();
+student.getFullName();
+student.getEmail();
+ */
+
+//! call(), apply() and bind()
+
+function getFullName(){
+  return `${this.firstName}${this.lastName}`
+}
+
+function getCourseDetails(sub1, sub2){
+  return `${this.course} includes ${sub1} ${sub2}`;
+}
+
+let user1 = {
+  id: 1,
+  firstName: "Jane ",
+  lastName: "Doe",
+  course: "Mern Stack",
+};
+
+let user2 = {
+  id: 2,
+  firstName: "james",
+  lastName: "Carry",
+  course: "java full stack",
+}
+
+console.log(user1);
+console.log(user2);
+
+
+//! call : immediately calls the function
+let fullName1 = getFullName.call(user1)
+console.log(fullName1);
+
+let CourseDetails1 = getCourseDetails.call(user1, "js", "Nodejs");
+console.log(CourseDetails1);
+
+//! apply(): immediately calls the function
+let fullName2 = getFullName.call(user2)
+console.log(fullName2);
+
+let CourseDetails2 = getCourseDetails.apply(user2, ["Java", "SpringBoot"]);
+console.log(CourseDetails2);
+
+//! bind() : returns bounded function which can be called latr on
+
+let boundedGetFullName = getFullName.bind(user1)
+
+console.log(boundedGetFullName());
+let boundedCourseDetails = getCourseDetails.bind(user1);
+console.log(boundedCourseDetails("HTML", "Node js"));
