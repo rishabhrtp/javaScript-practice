@@ -677,7 +677,7 @@ student.getEmail();
 
 //! call(), apply() and bind()
 
-function getFullName(){
+/* function getFullName(){
   return `${this.firstName}${this.lastName}`
 }
 
@@ -703,24 +703,89 @@ console.log(user1);
 console.log(user2);
 
 
-//! call : immediately calls the function
+///! call : immediately calls the function
 let fullName1 = getFullName.call(user1)
 console.log(fullName1);
 
 let CourseDetails1 = getCourseDetails.call(user1, "js", "Nodejs");
 console.log(CourseDetails1);
 
-//! apply(): immediately calls the function
+///! apply(): immediately calls the function
 let fullName2 = getFullName.call(user2)
 console.log(fullName2);
 
 let CourseDetails2 = getCourseDetails.apply(user2, ["Java", "SpringBoot"]);
 console.log(CourseDetails2);
 
-//! bind() : returns bounded function which can be called latr on
+///! bind() : returns bounded function which can be called latr on
 
 let boundedGetFullName = getFullName.bind(user1)
 
 console.log(boundedGetFullName());
 let boundedCourseDetails = getCourseDetails.bind(user1);
-console.log(boundedCourseDetails("HTML", "Node js"));
+console.log(boundedCourseDetails("HTML", "Node js")); */
+
+//! JAVASCRIPT OBJECT NOTATION (JSON)
+let user1 = {
+  id: 1,
+  fname: "John",
+  lname: "Doe",
+};
+
+function storeDataInLocalStorage() {
+  let jsonData = JSON.stringify(user1); // JS TO JSON
+  localStorage.setItem("usersData", jsonData);
+}
+
+function getDataFromLocalStorage() {
+  let data = localStorage.getItem("usersData");
+  let userObject = JSON.parse(data); // JSON TO JS
+  console.log(userObject);
+  document.writeln(`<em>${userObject.fname}</em>`);
+}
+
+function removeSingleDataFromLocalStorage() {
+  localStorage.removeItem("demo1");
+}
+
+function clearDataFromLocalStorage() {
+  localStorage.clear();
+}
+
+
+// //! ARRAYS : hetrogenous in nature
+
+
+/// 1) Array Literals
+// let arr1 = [10, true, "Hello World", () => {}, null, 1n, undefined];
+// console.log(arr1);
+
+// 2) Array Constructor
+// let arr2 = new Array(10, false, "Bye", function () {});
+// console.log(arr2);
+
+// //! ARRAY METHODS
+// let arr1 = [10, 20, 30, 40];
+// console.log(arr1); //[10, 20, 30, 40]
+
+// //! array.push() : Appends new elements to the end of an array, and returns the new length of the array.
+
+// let newLength = arr1.push(50, 60, 70);
+// console.log(arr1); //[10, 20, 30, 40, 50, 60, 70]
+// console.log(newLength);//7 <-- new length of arr1
+
+
+// //! array.pop() : Remove the last element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
+// let returnVal = arr1.pop();
+// console.log(arr1); // 10, 20, 30, 40, 50, 60]
+// console.log(returnVal); //70
+
+// //! array.unshift()
+// let newLength2 = arr1.unshift("Hello", 100);
+// console.log(arr1); // ['Hello', 100, 10, 20, 30, 40, 50, 60]
+// console.log(newLength2); // 8
+
+// //! array.shift()
+// let returnVal2 = arr1.shift();
+// console.log(arr1); //[100, 10, 20, 30, 40, 50, 60]
+// console.log(returnVal2); // "Hello"
