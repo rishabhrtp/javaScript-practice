@@ -852,8 +852,104 @@ console.log(newArr3); // [50] */
 // console.log(arr8); // [10, 31, 38, 49, 80, 615]
 
 //! CONCAT()
-let arr9 = [10, 20, 30];
-let arr10 = [40, 50, 60];
+// let arr9 = [10, 20, 30];
+// let arr10 = [40, 50, 60];
 
-let concatinatedArr = arr9.concat(arr10);
-console.log(concatinatedArr); //[10, 20, 30, 40, 50, 60]
+// let concatinatedArr = arr9.concat(arr10);
+// console.log(concatinatedArr); //[10, 20, 30, 40, 50, 60]
+
+//! ADVANCED ARRAY METHODS
+
+//! forEach( callbackfunc ) : used to iterate an array, returns undefined
+// let arr1 = [10, 20, 30, 40, 50];
+
+// // for(let i = 0; i<arr1.length; i++){
+// //   console.log(i, arr[i]);
+// // }
+
+// let returnVal1 = arr1.forEach((ele, idx, array) => {
+
+//   console.log(ele, idx, array);
+//   return ele + 5;
+// });
+// console.log(returnVal1);// undefined
+
+// console.log("==========================================");
+
+// //! map( callbackFunc ) : used to iterate an array, returns new array
+
+// let returnVal2 = arr1.map((ele, idx, array) => {
+
+//   console.log(ele, idx, array);
+//   return ele + 5;
+// });
+// console.log(returnVal2); // [15, 25, 35, 45, 55]
+
+// console.log("==========================================");
+
+// //! filter( callbackFunc )
+
+// let arr2 = [100, 200, 300, 400, 500];
+
+// let returnVal3 = arr2.filter((ele, idx, array) => ele > 200);
+// console.log(returnVal3); // [300, 400, 500]
+
+// console.log("==========================================");
+
+// //! find( callbackFunc )
+
+// let returnVal4 = arr2.find((ele, idx, array) => {
+//   console.log(ele);
+//   return ele > 200;
+// });
+// console.log(returnVal4); //300
+
+// console.log("-------------------------------------------");
+
+// //!findIndex( callbackFunc )
+// let returnVal5 = arr2.findIndex((ele, idx, array) => {
+//   console.log(ele);
+//   return ele > 200;
+// });
+// console.log(returnVal5); // 2
+
+// console.log("***********************************************")
+
+// //! reduce( callbackFunc , accumulatorValue )
+
+// let arr3 = [10, 20, 30, 40, 50];
+/// let sum = arr3.reduce((acc, ele) => {
+// //   console.log(acc, ele);
+// //   return acc + ele;
+/// }, 0);
+
+// // this is short code
+// let sum = arr3.reduce((acc, ele) => acc + ele, 0);
+
+// console.log(sum);
+
+// console.log("***********************************************")
+// let arr4 = [1, 2, 3, 4, 5]
+// //! toString()
+// let str1 = arr4.toString()
+// console.log(str1); // 1,2,3,4,5
+
+// //! join()
+
+// let str2 = arr4.join(" ");
+// console.log(str2); // 1 2 3 4 5
+
+// //! split()
+// let str3 = "Hello"
+// console.log(str3.split(""));
+
+// function pallidrome(word){
+//   let output = word.split("").reverse().join("")
+//   return output === word ? true : false
+// }
+
+// console.log(pallidrome("abc"));
+// console.log(pallidrome("racecar"));
+
+
+
