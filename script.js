@@ -860,12 +860,12 @@ console.log(newArr3); // [50] */
 
 //! ADVANCED ARRAY METHODS
 
-//! forEach( callbackfunc ) : used to iterate an array, returns undefined
+//! forEach( callbackFunc ) : used to iterate an array, returns undefined
 // let arr1 = [10, 20, 30, 40, 50];
 
-// // for(let i = 0; i<arr1.length; i++){
-// //   console.log(i, arr[i]);
-// // }
+// for(let i = 0; i<arr1.length; i++){
+//   console.log(i, arr[i]);
+// }
 
 // let returnVal1 = arr1.forEach((ele, idx, array) => {
 
@@ -919,11 +919,11 @@ console.log(newArr3); // [50] */
 
 // let arr3 = [10, 20, 30, 40, 50];
 /// let sum = arr3.reduce((acc, ele) => {
-// //   console.log(acc, ele);
-// //   return acc + ele;
+//   console.log(acc, ele);
+//   return acc + ele;
 /// }, 0);
 
-// // this is short code
+// this is short code
 // let sum = arr3.reduce((acc, ele) => acc + ele, 0);
 
 // console.log(sum);
@@ -951,5 +951,69 @@ console.log(newArr3); // [50] */
 // console.log(pallidrome("abc"));
 // console.log(pallidrome("racecar"));
 
+//! ARRAY DESTRUCTURING
 
+// let arr1 = [10, 20, 30, 40, 50];
+// let [n1, n2, n3, n4, n5] = arr1;
+// console.log(n2, n5); //20 50
 
+//!skip elements while destructuring
+// let arr2 = [100, 200, 300, 400, 500];
+// let[ , a1, , , a2] = arr2;
+// console.log(a1, a2); //200 500
+
+//!nested array
+// let arr3 = [1000, 2000, [3000, 4000], 5000];
+// let [b1, , [, b2], b3] = arr3;
+// console.log(b1, b2, b3); //1000 4000 5000
+
+// let arr4 = ["Hello", {id: 1, fname: "John", lname: "Doe"}];
+
+// let [str1, { fname }] = arr4;
+
+// console.log(str1, fname); //Hello John
+
+ //!EXAMPLE
+// function useState(state){
+//   return[state, () => {}];
+// }
+// let [state, setState] = useState();
+
+// function useRef(ref) {
+//   return {current: ref};
+// }
+// let { current } = useRef();
+
+//! REST AND SPREAD OPERATORS : ...variable
+
+// function demo1(p1, p2, ...p3){
+//   console.log(p1, p2); // 10 20
+//   console.log(p3); // <- rest parameter [30, 40, 50, 60, 70, 80, 90]
+//   console.log(arguments); // <- array like object, NOT PURE ARRAY
+// }
+// demo1(10, 20, 30, 40, 50, 60, 70, 80, 90);
+
+// let arr1 = [10, 20, 30, 40];
+// let [x1, ...x2] = arr1;
+// console.log(x1);
+// console.log(x2); // [20, 30, 40] <-- rest : PACK
+
+// let arr2 = [100, 200, 300, 400];
+// let arr3 = [...arr2]; // <--- copy elements
+// console.log(...arr3); // 100 200 300 400 <--- spread : unpack
+
+let obj1 = {
+  id: 1,
+  fname: "jane",
+  sal: 2000,
+  address: {city: "Noida" },
+};
+
+let obj2 = {
+  ...obj1,
+  lname: "Doe",
+  sal: 70000,
+};
+
+console.log(obj1);
+console.log(obj2);
