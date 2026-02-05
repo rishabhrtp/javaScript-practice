@@ -18,8 +18,8 @@
 /*
 THERE ARE 4 TYPES OF TOKENS
 
-1) Keywords: reserved words which has specific meaning 
- - Example :- var, let, const, for, if ,etc...
+1) Keywords: reserved words which has specific meaning
+- Example :- var, let, const, for, if ,etc...
 
 2) Identifiers : name given to a class, methods, variables are known as identifier
 
