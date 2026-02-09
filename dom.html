@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <body onload="pageLoad()">
+</head>
+<body onload="pageLoad()">
     <h1>Document Object Model ( DOM )</h1>
 
     <h2 id="head2">target me using ID 1</h2>
@@ -45,28 +45,47 @@
     <h3>Form Example 1</h3>
 
     <form onsubmit="handleForm1(event)">
-      <input type="text" placeholder="Email" id="email" />
-      <br />
-      <input type="text" placeholder="Password" id="password" />
-      <br />
-      <button type="submit">Submit</button>
+    <input type="text" placeholder="Email" id="email" />
+    <br />
+    <input type="text" placeholder="Password" id="password" />
+    <br />
+    <button type="submit">Submit</button>
     </form>
 
     <p
-      style="
+    style="
         height: 100px;
         width: 100px;
         background-color: lightblue;
         overflow-y: scroll;
-      "
-      onscroll="pageScroll()"
+    "
+    onscroll="pageScroll()"
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis
-      officia accusantium at ab laudantium tempora recusandae, sequi eaque
-      consequatur.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis
+    officia accusantium at ab laudantium tempora recusandae, sequi eaque
+    consequatur.
     </p>
-    
+
+    <!-- ADD EVENT LISTENER -->
+     <form id="signup-form">
+        <input type="text" name="username" id="usernameInput" placeholder="Enter Username">
+        <br><br>
+        <input type="text" name="email" id="emailInput" placeholder="Enter Email">
+        <br><br>
+        <input type="text" name="password" id="passwordInput" placeholder="Enter Password">
+        <button>Submit</button>
+     </form>
+
+     <!-- ! RAINBOW TASK USING ADD EVENT LISTENER -->
+    <div>violet</div>
+    <div>indigo</div>
+    <div>blue</div>
+    <div>green</div>
+    <div>yellow</div>
+    <div>orange</div>
+    <div>red</div>
+
 
     <script src="./dom.js"></script>
-  </body>
+    </body>
 </html>

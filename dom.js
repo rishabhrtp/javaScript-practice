@@ -127,86 +127,121 @@
 // onclick
 function singleClick() {
     console.log("single clicked");
-  }
-  
+}
+
   // ondblclick
-  function doubleClick() {
+function doubleClick() {
     console.log("Double CLick");
-  }
-  
+}
+
   // onmouseenter
-  function cursorEnter() {
+function cursorEnter() {
     console.log("cursor entered");
-  }
-  
+}
+
   // onmouseleave
-  function cursorExit() {
+function cursorExit() {
     console.log("cursor left");
-  }
-  
+}
+
   // onmousemove
-  function cursorMove() {
+function cursorMove() {
     console.log("cursor Moved");
-  }
-  
+}
+
   //! KEYBOARD EVENTS
   // onkeydown
-  function keyPressed() {
+function keyPressed() {
     console.log("key is Pressed");
-  }
-  
+}
+
   // onkeyup
-  function keyReleased() {
+function keyReleased() {
     console.log("key is Released");
-  }
-  
+}
+
   // onchange
-  function inputChanged() {
+function inputChanged() {
     console.log("input is changed");
-  }
-  
+}
+
   //! FORM EVENTS
   // onsubmit <-- always used in form tag
-  function handleForm1(e) {
+function handleForm1(e) {
     e.preventDefault(); // stops page reload
-  
+
     //! WAY 1
     //   let formData = {
     //     email: e.target[0].value,
     //     password: e.target[1].value,
     //   };
     //   console.log(formData);
-  
+
     //! WAY 2
     let email = document.querySelector("#email");
     let password = document.querySelector("#password");
-  
+
     let formData = {
-      email: email.value,
-      password: password.value,
+    email: email.value,
+    password: password.value,
     };
     console.log(formData);
-  }
-  
+}
+
   //! WINDOW EVENTS
   // onload{
-  function pageLoad() {
+function pageLoad() {
     console.log("Page is loaded");
-  }
-  
+}
+
   // onscroll
-  function pageScroll() {
+function pageScroll() {
     console.log("Page scrolled");
-  }
-  
-  // ! addEventListener( "event" ,  callbackFunc , useCapture )
-  
-  const h1Tag = document.createElement("h1");
-  h1Tag.textContent = "Learn addEventListener";
-  
-  h1Tag.addEventListener("click", () => {
+}
+
+// ! addEventListener( "event" ,  callbackFunc , useCapture )
+
+const h1Tag = document.createElement("h1");
+h1Tag.textContent = "Learn addEventListener";
+
+h1Tag.addEventListener("click", () => {
     console.log("H1 clicked");
     h1Tag.style.backgroundColor = "red";
+});
+
+document.body.append(h1Tag);
+
+const signupForm = document.getElementById("signup-form");
+
+signupForm.addEventListener("submit" , (e) => {
+  e.preventDefault();
+
+  const usernameInput = document.getElementById("usernameInput");
+  const emailInput = document.getElementById("emailInput");
+  const passwordInput = document.getElementById("passwordInput");
+
+  const userData = {
+    username: usernameInput.value,
+    email: emailInput.value,
+    password: passwordInput.value,
+  };
+
+  console.log(userData);
+});
+
+// ! RAINBOW TASK
+const divs = document.querySelectorAll("div");
+
+// NodeList[div,div,div,div,...]
+
+divs.forEach((ele) => {
+
+  ele.addEventListener("mouseenter", () => {
+    ele.style.backgroundColor = ele.textContent;
   });
-  
-  document.body.append(h1Tag);
+
+  ele.addEventListener("mouseleave", () => {
+    ele.style.backgroundColor = "white";
+  });
+
+});
